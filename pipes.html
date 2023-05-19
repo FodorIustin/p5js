@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    const pipeWidth = 20;
+const pipeSpacing = 10;
+const maxHeight = 200;
+let pipeHeights = [];
+
+function setup() {
+  createCanvas(800, 400);
+  noLoop();
+
+  const heightInput = createInput();
+  heightInput.attribute('type', 'number');
+  heightInput.attribute('placeholder', 'Enter height');
+  heightInput.style('width', '100px');
+  
+  const addButton = createButton('Add');
+  addButton.mousePressed(addManualPipe);
+  
+  const randomButton = createButton('Random');
+  randomButton.mousePressed(addRandomPipe);
+  
+  const sortButton = createButton('Sort');
+  sortButton.mousePressed(sortPipes);
+}
+
+
+
+  </script>
+</body>
+</html>
