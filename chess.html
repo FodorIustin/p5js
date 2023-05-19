@@ -21,6 +21,23 @@ function setup() {
       board[i][j] = new Square(i, j, (i+j)%2==0);
     }
   }
+   //initialize pawns array with 16 random positions
+   for (let i = 0; i < 16; i++) {
+    let x = floor(random(8));
+    let y = floor(random(8));
+    pawns.push(new Pawn(x, y, (i%2==0) ? 'black' : 'white'));
+  }
+}
+
+function draw() {
+  background(255);
+  
+  //display board
+  for (let i = 0; i < 8; i++) {
+    for (let j = 0; j < 8; j++) {
+      board[i][j].display();
+    }
+  }
   
 }
 
