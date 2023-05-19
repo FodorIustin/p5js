@@ -58,7 +58,22 @@ class Square {
     rect(this.x*this.size, this.y*this.size, this.size, this.size);
   }
 }
-
+class Pawn {
+  constructor(x, y, color) {
+    this.x = x;
+    this.y = y;
+    this.color = color;
+    this.size = 40;
+  }
+  
+  display() {
+    fill((this.color=='black') ? 0 : 255);
+    ellipse(this.x*50+25, this.y*50+25, this.size);
+    fill((this.color=='black') ? 255 : 0);
+    ellipse(this.x*50+15, this.y*50+20, this.size/5);
+    ellipse(this.x*50+35, this.y*50+20, this.size/5);
+    arc(this.x*50+25, this.y*50+30, this.size/3, this.size/3, 0, PI);
+  }}
 
 
 
