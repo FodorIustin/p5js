@@ -33,6 +33,26 @@ function setup() {
 }
 
 
+function addManualPipe() {
+  const heightInput = select('input[type="number"]');
+  const height = parseInt(heightInput.value());
+  if (!isNaN(height)) {
+    pipeHeights.push(height);
+    redraw();
+  }
+}
+
+function addRandomPipe() {
+  const randomHeight = random(maxHeight);
+  pipeHeights.push(randomHeight);
+  redraw();
+}
+
+function sortPipes() {
+  pipeHeights.sort((a, b) => a - b);
+  redraw();
+}
+
 
   </script>
 </body>
