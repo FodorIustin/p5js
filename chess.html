@@ -38,8 +38,29 @@ function draw() {
       board[i][j].display();
     }
   }
-  
+  //display pawns
+  for (let i = 0; i < pawns.length; i++) {
+    pawns[i].display();
+  }
 }
+
+class Square {
+  constructor(x, y, isWhite) {
+    this.x = x;
+    this.y = y;
+    this.isWhite = isWhite;
+    this.size = 50;
+  }
+  
+  display() {
+    let color = this.isWhite ? 255 : 0;
+    fill(color);
+    rect(this.x*this.size, this.y*this.size, this.size, this.size);
+  }
+}
+
+
+
 
   </script>
 </body>
