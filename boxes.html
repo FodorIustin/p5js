@@ -39,7 +39,12 @@ function draw() {
     text(box.number, box.x + boxWidth/2, box.y + boxHeight/2); 
   }
 }
-
+function getRandomColor() {
+  let r = floor(random(256));
+  let g = floor(random(256));
+  let b = floor(random(256));
+  return "rgb(" + r + ", " + g + ", " + b + ")";
+}
 
 
   </script>
