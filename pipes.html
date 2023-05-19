@@ -52,7 +52,20 @@ function sortPipes() {
   pipeHeights.sort((a, b) => a - b);
   redraw();
 }
-
+function draw() {
+  background(220);
+  
+  let x = 0;
+  for (let i = 0; i < pipeHeights.length; i++) {
+    const pipeHeight = pipeHeights[i];
+    const y = height - pipeHeight;
+    
+    fill(255, 0, 0);
+    rect(x, y, pipeWidth, pipeHeight);
+    
+    x += pipeWidth + pipeSpacing;
+  }
+}
 
   </script>
 </body>
