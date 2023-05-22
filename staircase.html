@@ -36,7 +36,13 @@
           treeBranch(length * 0.9, thickes);
           pop();
         }
-        
+        if (length < 97 && length >50) {
+          push();
+          rotate(-angle*1.3);
+          treeBranch(length * 0.9, thickes);
+          pop();
+        }
+        debugger;
       }
     </script>
     <script src="p5.min.js"></script>
