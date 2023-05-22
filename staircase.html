@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Recursivitate</title>
+  </head>
+  <body>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.6.0/p5.min.js" integrity="sha512-3RlxD1bW34eFKPwj9gUXEWtdSMC59QqIqHnD8O/NoTwSJhgxRizdcFVQhUMFyTp5RwLTDL0Lbcqtl8b7bFAzog==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script>
+      let img;
+      function setup() {
+        createCanvas(800, 800);
+      }
+      function draw() {
+        angle = PI /12;
+        translate(width , height-300);
+        treeBranch(200, 0.5);
+      }
+      console.log(length);
+      function treeBranch(length, thickes) {
+          //if(length <50) {stroke("black"); fill("white");}
+         
+
+        strokeWeight(thickes);
+        thickes+=0.1;
+       // circle(0,0, - length);
+       // line(0, 0, 0, -length);
+       //image(img, 0, 0, -length, -length);
+       rect(0, 0, -length  -60, -length-60);
+       translate(-20, -60);
+        if (length >100) {
+          push();
+          rotate(-angle);
+          treeBranch(length * 0.9, thickes);
+          pop();
+        }
+        
+      }
+    </script>
+    <script src="p5.min.js"></script>
+  </body>
+</html>
