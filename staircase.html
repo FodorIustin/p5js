@@ -16,11 +16,11 @@
       function draw() {
         angle = PI /12;
         translate(width , height-300);
-        treeBranch(200, 0.5);
+        treeBranch(200, 0.2);
       }
       console.log(length);
       function treeBranch(length, thickes) {
-          //if(length <50) {stroke("black"); fill("white");}
+         
          
 
         strokeWeight(thickes);
@@ -29,7 +29,7 @@
        // line(0, 0, 0, -length);
        //image(img, 0, 0, -length, -length);
        rect(0, 0, -length  -60, -length-60);
-       translate(-20, -60);
+       translate(0, -65);
         if (length >100) {
           push();
           rotate(-angle);
@@ -42,7 +42,20 @@
           treeBranch(length * 0.9, thickes);
           pop();
         }
-        debugger;
+        if (length < 50 && length >10) {
+          push();
+          rotate(-angle*2);
+          treeBranch(length * 0.8, thickes);
+          pop();
+        }
+        if (length < 10 && length >0.1) {
+          push();
+          rotate(-angle*3);
+          treeBranch(length * 0.4, thickes);
+          pop();
+        }
+       
+        
       }
     </script>
     <script src="p5.min.js"></script>
